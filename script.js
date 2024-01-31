@@ -6,7 +6,7 @@ function showImageList() {
 function selectImage(imageSrc) {
     const addAvatarCircle = document.querySelector('.add-avatar-circle');
     const imageList = document.getElementById('imageList');
-    
+
     // Set the background of the circle to the selected image
     addAvatarCircle.style.backgroundImage = `url(${imageSrc})`;
     addAvatarCircle.style.backgroundSize = '100% 100%';
@@ -16,6 +16,33 @@ function selectImage(imageSrc) {
 
     // Hide the image list
     imageList.style.display = 'none';
+
+    // Adding a 'selected' class to the selected avatar
+    const selectedAvatar = document.querySelector('.image-list img[src="' + imageSrc + '"]');
+    if (selectedAvatar) {
+        selectedAvatar.classList.add('selected');
+    }
+}
+
+
+function isAvatarSelected() {
+    var selectedAvatar = document.querySelector('.image-list img.selected');
+    return selectedAvatar !== null;
+}
+
+// Function to display error message for missing avatar
+function displayAvatarError() {
+    var avatarError = document.getElementById('avatarError');
+    avatarError.style.display = 'block';
+
+    setTimeout(() => {
+        avatarError.style.display = 'none';
+    }, 3000); // Adjust the duration as needed
+}
+
+// Function to reset error messages
+function resetErrorMessages() {
+    document.getElementById('avatarError').style.display = 'none';
 }
 
 function calculateLove() {
@@ -25,13 +52,23 @@ function calculateLove() {
     let person1Input = document.getElementById('person1');
     let person2Input = document.getElementById('person2');
 
+    // Reset error messages
+    resetErrorMessages();
+
     if (person1Input.value === '' || person2Input.value === ''){
         addLove.style.display = 'block';
         secondPart.style.display = 'none';
         setTimeout(() => {
             addLove.style.display = 'none';
-        }, 5000);
+        }, 8000);
     } else {
+        const selectedAvatar = document.querySelector('.image-list img.selected');
+        if (!selectedAvatar) {
+            // Display avatar error message
+            displayAvatarError();
+            return;
+        }
+
         cont.style.display = 'block';
         setTimeout(() => {
             cont.style.display = 'none';
@@ -67,3 +104,20 @@ function calculateLove() {
     }
 }
 
+function resetLoveCalculator() {
+    // Reset input fields
+    document.getElementById('person1').value = '';
+    document.getElementById('person2').value = '';
+
+    // reset selected Avatar
+    const selectedAvatar = document.querySelector('.image-list img.selected');
+    if (selectedAvatar) {
+        selectedAvatar.classList.remove('selected');
+    }
+
+    // Hide result card
+    document.getElementById('cards').style.display = 'none';
+    document.getElementById('mainContainer').classList.remove('result-displayed');
+
+    resetErrorMessages();
+}

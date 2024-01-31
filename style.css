@@ -9,25 +9,6 @@ body{
     
 }
 
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-} */
-
-
-/* @keyframes flashyLove {
-  0% { color: red; }
-  25% { color: rgb(244, 71, 192); }
-  50% { color: red; }
-  75% { color: yellow; }
-  100% { color: red; }
-} */
-
 .flashy-love {
   color: rgb(250, 10, 170);
   font-size: 34px;
@@ -45,6 +26,19 @@ body{
   background-color: #e44d96;
   color: white;
   font-size: 17.5px;
+  padding: 8px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.error-message{
+  display: none;
+  width: 600px;
+  font-weight: 800;
+  background-color: #e44d96;
+  color: white;
+  font-size: 15px;
   padding: 8px;
   flex-direction: column;
   align-items: center;
@@ -70,7 +64,7 @@ body{
     position: absolute;
     top: -100%;
     left: 10%;
-    transform: translateX(-120%);
+    transform: translateX(-150%);
     background: transparent;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -79,7 +73,9 @@ body{
     flex-wrap: wrap;
     gap: 10px;
 }
-
+.image-list img.selected {
+  border: 2px solid #e44d96; /* You can customize the border color */
+}
 .image-list img {
     width: 50px;
     height: 50px;
@@ -209,86 +205,9 @@ body{
     pointer-events: none; /* Disable interactions with background elements */
     filter: blur(5px); /* Apply a blur effect to the background */
 }
-
-  /* .wave-group {
-    position: relative;
-  }
-  
-  .wave-group .input {
-    font-size: 16px;
-  }
-  
-  .wave-group .input:focus {
-    outline: none;
-  }
-  
-  .wave-group .label {
-    color: #999;
-    font-size: 18px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    display: flex;
-  }
-  
-  .wave-group .label-char {
-    transition: 0.2s ease all;
-    transition-delay: calc(var(--index) * .05s);
-  }
-  
-  .wave-group .input:focus ~ label .label-char,
-  .wave-group .input:valid ~ label .label-char {
-    transform: translateY(-20px);
-    font-size: 20px;
-    color: #fcfcff;
-    background-color: #ce1687;
-    border-radius: 1rem;
-    padding: 0.02rem 0.5rem;
-  }
-  
-  .wave-group .bar {
-    position: relative;
-    display: block;
-    width: 200px;
-  }
-  
-  .wave-group .bar:before {
-    left: 50%;
-  }
-  
-  .wave-group .bar:after {
-    right: 50%;
-  }
-  
-  .wave-group .input:focus ~ .bar:before,
-  .wave-group .input:focus ~ .bar:after {
-    width: 50%;
-  } */
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#cont.pointer-events-none {
+  pointer-events: none;
+}
    .cont {
     position: absolute;
     top: 50%;
@@ -505,6 +424,9 @@ body{
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
+  a{
+    text-decoration: none;
+  }
   .animated-button .text {
     position: relative;
     z-index: 1;
@@ -544,3 +466,133 @@ body{
     opacity: 1;
   }
   
+  /*------------>RESPONSIVENESS<----------*/
+  /* Add these media queries to your existing stylesheet or create a new one */
+
+/* Responsive styles for larger screens */
+@media (min-width: 992px) {
+  .col-lg-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+  }
+
+  .col-lg-5 {
+      flex: 0 0 41.66667%;
+      max-width: 41.66667%;
+  }
+}
+
+/* Responsive styles for medium-sized screens */
+@media (max-width: 991px) {
+  .col-lg-6, .col-lg-5 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .container {
+      padding: 10px;
+  }
+
+  .flashy-love {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Welcome{
+    font-size: 10px;
+  }
+  .welcome2 {
+    display: none;
+  }
+  .addLove{
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    width: 100%;
+  }
+  .error-message{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 8px;
+  }
+  .col-lg-6 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.avatar-container {
+    text-align: center;
+}
+
+.add-avatar-circle {
+    margin-left: 3%;
+    margin-right: auto;
+    width: 120px;
+    height: 120px;
+    font-size: 10px;
+}
+.image-lists{
+  margin-top: 15%;
+  margin-left: 69%;
+  margin-right: auto;
+  width: 100px;
+  height: 100px;
+}
+.avatar2{
+  margin-left: 15%;
+}
+.image-list {
+  display: flex;
+  transform: translateX(-180%);
+  padding: 0;
+  margin: 0;
+  top: -30%;
+  left: 50%;
+  background: none;
+}
+.input{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  height: 30px;
+  box-shadow: none;
+}
+.field {
+    text-align: center;
+}
+.field:focus-within label,
+  .field:not(:has(:placeholder-shown))
+  label{
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .cards {
+    position: fixed;
+    left: 1%;
+    width: 300px;
+    height: 235px;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+  .field label {
+    margin-top: -7px;
+  }
+}
+@media (max-width: 358px){
+  .image-list{
+    transform: translateX(-250%);
+  }
+  .cards {
+    left: 2%;
+    width: 200px;
+    height: 270px;
+    display: none;
+  }
+}

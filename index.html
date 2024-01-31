@@ -15,11 +15,18 @@
 <body>
 <main id="mainContainer" class="justify-content-center container">
 <h2 class="animate__animated animate__infinite mt-2 text-center flashy-love animate__heartBeat" style="font-family: cursive; font-weight: 700;">😘💖LOVE CALCULATOR💖</h2>
-<p class="text-center" style="color:yellow;">Welcome to our Love Calculator! 💖✨ Enter the names of you and your special someone, and let's discover the magic of your love compatibility.💑🌟💖</p><span class="text-center" id="secondPart" style="display: block; color: yellow; margin-top: -15px;">Our algorithm is here to sprinkle a bit of love and fun into your day. Feel the excitement and let's see what the stars have to say about your relationship! Get ready for some heartwarming results. Happy calculating! 💑🌟</span><div class="addLove mt-3 mb-3 rounded-3" id="addLove">
+<p class="text-center Welcome" style="color:yellow;">Welcome to our Love Calculator! 💖✨ Enter the names of you and your special someone, and let's discover the magic of your love compatibility.💑🌟💖</p>
+<p class="text-center welcome2" id="secondPart" style=" color: yellow; margin-top: -15px;">Our algorithm is here to sprinkle a bit of love and fun into your day. Feel the excitement and let's see what the stars have to say about your relationship! Get ready for some heartwarming results. Happy calculating! 💑🌟</p>
+<div class="animate__animated animate__rubberBand addLove mt-3 mb-3 rounded-3" id="addLove">
   Oops! Pls fill in both names to unveil the magic of love. 💖✨💑
 </div>
-<div class="row  mt-4">
-    <div class="ms-2 col-lg-6 col-md-6 col-sm-12 col-12">
+
+<div id="avatarError" class="error-message animate__animated animate__rubberBand mt-3 mb-3 rounded-3">
+  Oops! Don't be in haste.😅 Please select an avatar to continue. 💔🌟
+</div>
+
+<div class="row me-5 mt-4">
+    <div class="ms-5 col-lg-6 col-md-6 col-sm-12 col-12">
       <div class="avatar-container col-sm-3 mb-4 ms-5">
         <div class="add-avatar-circle" onclick="showImageList()">Add Your Avatar</div>
         <div class="image-list" id="imageList" style="display: none;">
@@ -40,7 +47,7 @@
 
 
 
-<div class="col-lg-5 col-md-5 col-sm-12 col-12">
+<div class="avatar2 col-lg-5 col-md-5 col-sm-12 col-12">
         <div>
         <label for="person2">
           <div><img src="img/download-1.jpg" class="image-lists mb-4" alt=""></div>  
@@ -70,6 +77,9 @@
         <span></span>
         <span></span>
       </div>
+
+
+
       <div class="cards animate__animated animate__tada" id="cards" style="display: none;">
         <div class="img">❤</div>
         <div class="texter">Hover for love's percentage magic! 💖✨</div>
@@ -77,13 +87,13 @@
           <p class="text head">Astrologer</p>
           <span class="text-center" id="messageContainer"></span>
           <p class="text price text-center" id="love-result"></p>
-          <a href=""><button class="animated-button">
+          <button class="animated-button">
             <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
               ></path>
             </svg>
-            <span class="text" style="text-decoration: none;">Try Again</span>
+            <span class="text" onclick="resetLoveCalculator()">Try Again?😍</span>
             <span class="circle"></span>
             <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -91,7 +101,6 @@
               ></path>
             </svg>
           </button>
-          </a>
         </div>
       </div>
       
