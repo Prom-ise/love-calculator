@@ -105,6 +105,7 @@ body{
     font-size: 25px;
     font-weight: 600;
     text-transform: uppercase;
+    font-family: cursive;
    }
    
    .input:focus {
@@ -467,8 +468,6 @@ body{
   }
   
   /*------------>RESPONSIVENESS<----------*/
-  /* Add these media queries to your existing stylesheet or create a new one */
-
 /* Responsive styles for larger screens */
 @media (min-width: 992px) {
   .col-lg-6 {

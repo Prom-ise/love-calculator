@@ -55,7 +55,7 @@ function calculateLove() {
     // Reset error messages
     resetErrorMessages();
 
-    if (person1Input.value === '' || person2Input.value === ''){
+    if (person1Input.value === ' ' || person2Input.value === ' '){
         addLove.style.display = 'block';
         secondPart.style.display = 'none';
         setTimeout(() => {
