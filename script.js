@@ -34,6 +34,7 @@ function isAvatarSelected() {
 function displayAvatarError() {
     var avatarError = document.getElementById('avatarError');
     avatarError.style.display = 'block';
+    secondPart.style.display = 'none'
 
     setTimeout(() => {
         avatarError.style.display = 'none';
