@@ -50,13 +50,19 @@ function calculateLove() {
     let addLove = document.getElementById("addLove");
     let cont = document.getElementById("cont");
     let cards = document.getElementById("cards");
-    let person1Input = document.getElementById('person1');
-    let person2Input = document.getElementById('person2');
+   
+    const person1Input = document.getElementById('person1');
+    const person2Input = document.getElementById('person2');
+    
+
+    const person1Value = person1Input.value.trim();
+    const person2Value = person2Input.value.trim();
+
 
     // Reset error messages
     resetErrorMessages();
 
-    if (person1Input.value === '' && person2Input.value === '' || person1Input.value === '' || person2Input.value === ''){
+    if (person1Value === '' && person2Value === ''){
         addLove.style.display = 'block';
         secondPart.style.display = 'none';
         setTimeout(() => {
