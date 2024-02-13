@@ -56,7 +56,7 @@ function calculateLove() {
     // Reset error messages
     resetErrorMessages();
 
-    if (person1Input.value === ' ' || person2Input.value === ' '){
+    if (person1Input.value === '' && person2Input.value === '' || person1Input.value === '' || person2Input.value === ''){
         addLove.style.display = 'block';
         secondPart.style.display = 'none';
         setTimeout(() => {
@@ -118,6 +118,7 @@ function resetLoveCalculator() {
 
     // Hide result card
     document.getElementById('cards').style.display = 'none';
+    cards.style.display = 'none'
     document.getElementById('mainContainer').classList.remove('result-displayed');
 
     resetErrorMessages();
