@@ -1,12 +1,12 @@
 body{
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     align-items: center;
     justify-content: center;
     height: 100%;
     background-image: url('img/wp5705457-love-4k-desktop-wallpapers.jpg');  
     background-size: cover;  
-    
+    padding-bottom: 5%;
 }
 
 .flashy-love {
@@ -594,4 +594,15 @@ body{
     height: 270px;
     display: none;
   }
+}
+::-webkit-scrollbar {
+  width: 7px
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ef08bd;
 }
